@@ -1,0 +1,92 @@
+* {
+  font-family: 'JetbrainsMono Nerd Font';
+  font-size: 12px;
+  min-height: 0;
+  padding-right: 2px;
+  padding-left: 2px;
+  padding-bottom: 0px;
+}
+
+#waybar {
+  background: transparent;
+  color: #c6d0f5;
+}
+
+#workspaces {
+  border-radius: 40px;
+  margin: 5px;
+  background: #101010;
+  margin-left: 2px;
+}
+
+#workspaces button {
+  color: #babbf1;
+  border-radius: 40px;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+  color: #99d1db;
+  border-radius: 40px;
+}
+
+button {
+  background: transparent;
+}
+
+#workspaces button:hover {
+  background: #1e1e1e;
+  border: 0px solid transparent;
+}
+
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#bluetooth,
+#custom-power {
+  background-color: #101010;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+#clock {
+  color: #8caaee;
+  border-radius: 40px;
+}
+
+
+#battery {
+  color: #a6d189;
+}
+
+#battery.charging {
+  color: #a6d189;
+}
+
+#battery.warning:not(.charging) {
+  color: #e78284;
+}
+
+
+#backlight,
+#battery,
+#bluetooth {
+  border-radius: 0;
+}
+
+#pulseaudio {
+  color: #ea999c;
+  border-radius: 40px 0px 0px 40px;
+}
+
+#bluetooth {
+  color: #90d1e5;
+
+}
+
+#custom-power {
+  margin-right: 1rem;
+  border-radius: 0px 40px 40px 0px;
+  color: #e78284;
+}
