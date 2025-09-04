@@ -31,7 +31,6 @@
     "tooltip": false
   },
   "clock": {
-    "timezone": "America/Mexico_City",
     "format": "{:%I:%M  %d, %m}",
     "tooltip-format": "{calendar}",
     "calendar": {
