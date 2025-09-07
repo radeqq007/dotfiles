@@ -22,7 +22,7 @@
     "pulseaudio_slider",
     "pulseaudio",
     "network",
-    "hyprland/language"
+    "battery"
   ],
   /* === Left Modules === */
   "custom/archicon": {
