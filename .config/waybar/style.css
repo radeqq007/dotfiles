@@ -109,9 +109,6 @@ window#waybar.hidden {
   color: #ffde96;
 }
 
-#workspaces button.active:hover {
-}
-
 /* Modules right */
 #taskbar {
   background: transparent;
