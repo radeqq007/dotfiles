@@ -106,7 +106,7 @@ window#waybar.hidden {
 }
 
 #workspaces button:hover {
-  color: #89b4fa;
+  color: #ffde96;
 }
 
 #workspaces button.active:hover {
