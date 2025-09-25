@@ -99,14 +99,10 @@
       "deactivated": ""
     }
   },
-  "pulseaudio_slider": {
-    "format": "{volume}%",
-    "tooltip": false,
-    "on-click": "pavucontrol"
-  },
   "pulseaudio": {
     "format": "{volume}% {icon}",
     "format-muted": " {format_source}",
+    "on-click": "pavucontrol",
     "format-icons": {
       "default": ["", ""]
     }
