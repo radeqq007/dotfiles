@@ -1,4 +1,4 @@
-theme = "GitHub-Dark-Dimmed"
+theme = Catppuccin Frappe
 
 background-opacity = 0.8
 background-blur = true
