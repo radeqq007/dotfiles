@@ -27,7 +27,7 @@
   /* === Left Modules === */
   "custom/archicon": {
     "format": "",
-    "on-click": "wofi --show drun",
+    "on-click": "wlogout",
     "tooltip": false
   },
   "clock": {

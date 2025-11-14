@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-  background: rgba(34, 36, 54, 0.6);
+  background: transparent;
 }
 
 window#waybar.hidden {
@@ -91,22 +91,22 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-  color: #fdd889;
+  color: #ea96ff;
   background: transparent;
   padding: 4px 4px;
   transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
 #workspaces button.occupied {
-  color: #a6e3a1;
+  color: #cf36e4;
 }
 
 #workspaces button.active {
-  color: #ffce47;
+  color: #e944ff;
 }
 
 #workspaces button:hover {
-  color: #ffde96;
+  color: rgb(235, 112, 252);
 }
 
 /* Modules right */
