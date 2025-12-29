@@ -45,3 +45,14 @@ zstyle ':completion:*' list-colros '${(s.:.)LS_COLORS}'
 # Aliases
 alias ls='ls --color'
 
+
+# opencode
+export PATH=/home/radeqq/.opencode/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/home/radeqq/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
