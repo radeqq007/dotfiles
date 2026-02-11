@@ -58,3 +58,14 @@ esac
 # pnpm end
 
 export PATH=$HOME/.local/bin:$PATH
+
+# Go Lang
+export GOPATH="$HOME/go"
+
+path=(
+  $GOPATH/bin
+  /usr/local/go/bin
+  $path
+)
+
+export PATH
