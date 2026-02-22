@@ -49,6 +49,9 @@ alias ls='ls --color'
 # opencode
 export PATH=/home/radeqq/.opencode/bin:$PATH
 
+# hyprshot
+export HYPRSHOT_DIR=/home/radeqq/Pictures/Screenshots
+
 # pnpm
 export PNPM_HOME="/home/radeqq/.local/share/pnpm"
 case ":$PATH:" in
