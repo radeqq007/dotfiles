@@ -52,6 +52,9 @@ export PATH=/home/radeqq/.opencode/bin:$PATH
 # hyprshot
 export HYPRSHOT_DIR=/home/radeqq/Pictures/Screenshots
 
+# nim
+export PATH=/home/radeqq/.nimble/bin:$PATH
+
 # pnpm
 export PNPM_HOME="/home/radeqq/.local/share/pnpm"
 case ":$PATH:" in
