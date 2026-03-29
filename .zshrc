@@ -75,3 +75,10 @@ path=(
 )
 
 export PATH
+
+# bun completions
+[ -s "/home/radeqq/.bun/_bun" ] && source "/home/radeqq/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
