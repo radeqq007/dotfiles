@@ -37,6 +37,8 @@ setopt hist_find_no_dups
 # Binds
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
 
 # Completion stylig
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
