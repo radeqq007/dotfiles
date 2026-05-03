@@ -46,7 +46,10 @@ zstyle ':completion:*' list-colros '${(s.:.)LS_COLORS}'
 
 # Aliases
 alias ls='ls --color'
-
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
 
 # opencode
 export PATH=/home/radeqq/.opencode/bin:$PATH
