@@ -108,12 +108,13 @@
       "default": ["", ""]
     }
   },
-  "network": {
+    "network": {
     "format": "{ifname}",
+    "format-wifi": "{essid} ",
     "format-ethernet": "{ifname} 󰈀",
     "format-disconnected": " ",
     "tooltip-format": " {ifname} via {gwaddr}",
-    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "tooltip-format-ethernet": " {ifname} via {gwaddr}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
   },
