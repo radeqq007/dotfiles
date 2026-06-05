@@ -91,3 +91,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+export PATH=$PATH:/home/radeqq/.spicetify
