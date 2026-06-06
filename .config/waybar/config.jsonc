@@ -1,134 +1,63 @@
 {
-  "layer": "top",
-  "position": "top",
-  "autohide": true,
-  "autohide-blocked": false,
-  "exclusive": true,
-  "passthrough": false,
-  "gtk-layer-shell": true,
-  /* === Modules Order === */
-  "modules-left": [
-    "custom/archicon",
-    "clock",
-    "cpu",
-    "memory",
-    "disk",
-    "temperature"
-  ],
-  "modules-center": ["hyprland/workspaces"],
-  "modules-right": [
-    "wlr/taskbar",
-    "idle_inhibitor",
-    "pulseaudio_slider",
-    "pulseaudio",
-    "network",
-    "battery"
-  ],
-  /* === Left Modules === */
-  "custom/archicon": {
-    "format": "",
-    "on-click": "wlogout",
-    "tooltip": false
-  },
-  "clock": {
-    "locale": "C",
-    "format": "{:%H:%M %d.%m.%Y}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "month",
-      "mode-mon-col": 3,
-      "weeks-pos": "right",
-      "on-scroll": 1,
-      "format": {
-        "months": "<span color='#ffead3'><b>{}</b></span>",
-        "days": "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-      }
-    }
-  },
-  "cpu": {
-    "format": "{usage}% ",
-    "tooltip": true,
-    "tooltip-format": "CPU usage: {usage}%\nCores: {cores}"
-  },
-  "memory": {
-    "format": "{}% 󰍛",
-    "tooltip": true,
-    "tooltip-format": "RAM in use: {used} / {total} ({percentage}%)"
-  },
-  "disk": {
-    "format": "{percentage_free}% ",
-    "tooltip": true,
-    "tooltip-format": "Free space: {free} / {total} ({percentage_free}%)"
-  },
-  "temperature": {
-    "format": "{temperatureC}°C {icon}",
-    "tooltip": true,
-    "tooltip-format": "Current temperature: {temperatureC}°C\nCritical if > 80°C",
-    "format-icons": [""]
-  },
-  /* === Center Modules === */
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "default": "",
-      "active": ""
+    "layer": "top",
+    "position": "top",
+    "width": 1910,
+    "height": 25,
+    "margin": "5 0",
+
+    "group/left" : {
+        "orientation": "horizontal",
+        "modules" : [
+            "hyprland/workspaces", 
+            "mpris"
+        ]
     },
-    "persistent-workspaces": {
-      "*": 2
+
+    "group/left-hidden" : {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false,
+            "click-to-reveal": true
+        },
+        "modules" : [
+            "custom/arrow-right", "battery", "cpu", "load"
+        ]
     },
-    "disable-scroll": true,
-    "all-outputs": true,
-    "show-special": true
-  },
-  /* === Right Modules === */
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "all-outputs": true,
-    "active-first": true,
-    "tooltip-format": "{name}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": ["rofi"]
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
-  },
-  "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-muted": " {format_source}",
-    "on-click": "pavucontrol",
-    "format-icons": {
-      "default": ["", ""]
-    }
-  },
-    "network": {
-    "format": "{ifname}",
-    "format-wifi": "{essid} ",
-    "format-ethernet": "{ifname} 󰈀",
-    "format-disconnected": " ",
-    "tooltip-format": " {ifname} via {gwaddr}",
-    "tooltip-format-ethernet": " {ifname} via {gwaddr}",
-    "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50
-  },
-  "battery": {
-    "states": {
-      // "good": 95,
-      "warning": 30,
-      "critical": 15
+
+    "group/left-hidden-top" : {
+        "orientation": "horizontal",
+        "modules" : [ "power-profiles-daemon", "group/left-hidden" ]
     },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", ""]
-  }
+
+    "group/right" : {
+        "orientation": "horizontal",
+        "modules" : [
+            "bluetooth", "group/group-volume", "group/group-backlight", "network", "tray"
+        ]
+    },
+
+    "group/right-hidden" : {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true,
+            "click-to-reveal": true
+        },
+        "modules" : [
+            "custom/arrow-left", "memory", "temperature"
+        ]
+    },
+
+    "group/right-hidden-top" : {
+        "orientation": "horizontal",
+        "modules" : [ "group/right-hidden",  "custom/ctlcenter" ]
+    },
+
+    "modules-left"   : ["group/left-hidden-top", "group/left"],
+    "modules-center" : ["clock"],
+    "modules-right"  : [ "group/right",  "group/right-hidden-top"],
+
+    "include": [ "~/.config/waybar/modules.jsonc" ]
 }
+
