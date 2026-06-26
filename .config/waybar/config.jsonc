@@ -118,7 +118,6 @@
 
         "group/traym": {
             "orientation": "horizontal",
-            "drawer": {},
             "modules": ["custom/trayicon", "tray"],
         },
 
@@ -213,8 +212,6 @@
 
         "hyprland/language": {
             "format": " {}",
-            "format-fi": "Vittu",
-            "format-ru": "Блять",
             "min-length": 8,
             "on-click": "hyprctl switchxkblayout current next & aplay ~/.config/sounds/interact.wav",
             "tooltip": false,
@@ -387,13 +384,10 @@
         },
 
         "custom/trayicon": {
-            // "format": " ",
-            // "format": "Zäni",
-            // "format": "󰣇 ",
-            // "format": " ",
-            "format": "ᗧ ",
+            "format": "󰣇 ",
+            // "format": "",
             "tooltip": false,
-            "on-click": " bash ~/.config/scripts/pacman.sh",
+            "on-click": "wlogout",
             "on-scroll-up": "",
             "on-scroll-down": "",
         },
