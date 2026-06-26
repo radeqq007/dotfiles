@@ -490,8 +490,8 @@
 /* Tooltip */
 /* {{{ */
 tooltip {
-    background: @background;
-    border: 3px solid @caution;
+    background: @background2;
+    border: 2px solid @caution;
     border-radius: 8px;
     font-weight: 500;
     font-family: "JetBrains Mono Nerd Font";
