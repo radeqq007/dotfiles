@@ -3,8 +3,8 @@
 
 /* Define colors */
 /* {{{ */
-@define-color background1 rgba(12, 20, 38, 1);
-@define-color background2 rgba(11, 10, 32, 1);
+@define-color background1 rgba(15, 15, 38, 1);
+@define-color background2 rgba(10, 10, 32, 1);
 @define-color sepepator #313244;
 @define-color warning #f38ba8;
 @define-color caution #45475a;
@@ -81,7 +81,7 @@
     font-size: 10pt;
     font-weight: 600;
     color: @text;
-    border-radius: 6pt;
+    border-radius: 8pt;
     /* box-shadow: */
     /*   inset 0px 5px 4px -5px rgba(170, 190, 255, 0.5), */
     /*   inset 0px -5px 4px -5px rgba(170, 190, 255, 1); */
