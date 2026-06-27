@@ -4,10 +4,25 @@ background-opacity = 0.75
 background-blur = true
 
 keybind = ctrl+r=reload_config
+keybind = ctrl+f=start_search
+keybind = ctrl+a=select_all
 
-keybind = alt+up=new_split:up
-keybind = alt+down=new_split:down
-keybind = alt+left=new_split:left
-keybind = alt+right=new_split:right
+# splits
+keybind = alt+ctrl+up=new_split:up
+keybind = alt+ctrl+down=new_split:down
+keybind = alt+ctrl+left=new_split:left
+keybind = alt+ctrl+right=new_split:right
+
+keybind = alt+up=goto_split:up
+keybind = alt+down=goto_split:down
+keybind = alt+left=goto_split:left
+keybind = alt+right=goto_split:right
 
 keybind = alt+q=close_surface
+
+# tabs
+keybind = alt+ctrl+==new_tab
+keybind = alt+ctrl+-=close_tab
+
+keybind = alt+==next_tab
+keybind = alt+-=previous_tab
