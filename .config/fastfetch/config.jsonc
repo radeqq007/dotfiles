@@ -21,6 +21,11 @@
             "keyColor": "green"
         },
         {
+            "type": "disk",
+            "key": "│ ├",
+            "keyColor": "green"
+        },
+        {
             "type": "cpu",
             "key": "│ ├",
             "keyColor": "green"
@@ -32,12 +37,7 @@
         },
         {
             "type": "memory",
-            "key": "│ ├󰍛",
-            "keyColor": "green"
-        },
-        {
-            "type": "disk",
-             "key": "└ └",
+            "key": "│ └󰍛",
             "keyColor": "green"
         },
         {
@@ -71,7 +71,7 @@
         },
         {
             "type": "shell",
-            "key": "└ └",
+            "key": "│ └",
             "keyColor": "yellow"
         },
         "break",
@@ -97,7 +97,7 @@
         },
         {
             "type": "terminal",
-            "key": "└ └",
+            "key": "│ └",
             "keyColor": "blue"
         },
         {
