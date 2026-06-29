@@ -2,7 +2,7 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
-  mkdir -p "$(dirname $ZINIT_HOME)"
+  mkdir -p "$(dirname "$ZINIT_HOME")"
   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
@@ -13,12 +13,13 @@ source "${ZINIT_HOME}/zinit.zsh"
 eval "$(starship init zsh)"
 
 # Plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-
-# Load completions
-autoload -U compinit && compinit
+zinit wait lucid light-mode for \
+    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+        zsh-users/zsh-completions \
+    light-mode \
+        zsh-users/zsh-autosuggestions \
+    light-mode \
+        zsh-users/zsh-syntax-highlighting
 
 # History
 HISTSIZE=3000
@@ -42,54 +43,50 @@ bindkey '^[[1;5C' forward-word
 
 # Completion stylig
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colros '${(s.:.)LS_COLORS}'
+zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'
 
 # Aliases
-alias ls='ls --color'
+alias ls='ls --color=auto'
 alias g='git'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 
-# opencode
-export PATH=/home/radeqq/.opencode/bin:$PATH
-
 # hyprshot
-export HYPRSHOT_DIR=/home/radeqq/Pictures/Screenshots
-
-# nim
-export PATH=/home/radeqq/.nimble/bin:$PATH
+export HYPRSHOT_DIR=$HOME/Pictures/Screenshots
 
 # pnpm
-export PNPM_HOME="/home/radeqq/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
-
-export PATH=$HOME/.local/bin:$PATH
 
 # Go Lang
 export GOPATH="$HOME/go"
 
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+typeset -U path
+
 path=(
+  $HOME/.local/bin
   $GOPATH/bin
   /usr/local/go/bin
+  $PNPM_HOME
+  $BUN_INSTALL/bin
+  $HOME/.spicetify
+  $HOME/.opencode/bin
   $path
 )
 
 export PATH
 
-# bun completions
-[ -s "/home/radeqq/.bun/_bun" ] && source "/home/radeqq/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# zoxide
-eval "$(zoxide init zsh)"
-
-export PATH=$PATH:/home/radeqq/.spicetify
