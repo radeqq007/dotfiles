@@ -13,13 +13,16 @@ source "${ZINIT_HOME}/zinit.zsh"
 eval "$(starship init zsh)"
 
 # Plugins
+zinit lucid light-mode for \
+  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+  zsh-users/zsh-completions \
+  zsh-users/zsh-autosuggestions \
+  Aloxaf/fzf-tab
+
 zinit wait lucid light-mode for \
-    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-        zsh-users/zsh-completions \
-    light-mode \
-        zsh-users/zsh-autosuggestions \
-    light-mode \
-        zsh-users/zsh-syntax-highlighting
+  zsh-users/zsh-syntax-highlighting \
+  zsh-users/zsh-history-substring-search \
+  hlissner/zsh-autopair
 
 # History
 HISTSIZE=3000
@@ -40,6 +43,9 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
+
+bindkey '^p' history-substring-search-up
+bindkey '^n' history-substring-search-down
 
 # Completion stylig
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
