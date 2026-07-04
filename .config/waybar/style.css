@@ -66,7 +66,7 @@
 #waybar.main #custom-nvidia,
 #waybar.main #custom-weather,
 #waybar.main #custom-weather,
-#waybar.main #custom-battery,
+#waybar.main #battery,
 #waybar.main #keyboard-state,
 #waybar.main #network,
 #waybar.main #battery,
@@ -118,7 +118,7 @@
     background: @background2;
 }
 
-#waybar.main #custom-battery,
+#waybar.main #battery,
 #waybar.main #language,
 #waybar.main #backlight,
 #waybar.main #battery {
@@ -181,7 +181,6 @@
 }
 
 #waybar.main #custom-nvidia.critical,
-/* #waybar.main #custom-battery.critical, */
 #waybar.main #custom-headsetbattery.critical,
 #waybar.main #memory.swap.critical,
 #waybar.main #memory.ram.critical,
@@ -218,12 +217,12 @@
     color: @sepepator;
 }
 #waybar.main #custom-headsetbattery.low,
-#waybar.main #custom-battery.warning,
-#waybar.main #custom-battery.critical {
+#waybar.main #battery.warning,
+#waybar.main #battery.critical {
     color: @warning;
 }
 
-#waybar.main #custom-battery.charging {
+#waybar.main #battery.charging {
     color: @misc;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -487,7 +486,7 @@ tooltip {
         inset 0px -4px 4px -5px rgba(0, 0, 0, 0.5);
 
     border-radius: 7px;
-    padding-left: 2502px;
+    padding-left: 50px;
     /* Use this for padding:  */
     /* (H_rez / scaling) - L_margin -R_margin - 2 * border - (font-size / 2)*/
     /* For example: (2880px / 1.25) - 24 - 24 - 2 * 2.5 - (27 / 2) = 2237.5px */

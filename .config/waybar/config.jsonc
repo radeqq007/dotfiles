@@ -40,12 +40,11 @@
             "custom/spacer3",
             "hyprland/language",
             "backlight",
-            "custom/battery",
+            "battery",
             "custom/spacer4",
             // "custom/weather",
             "custom/timer",
             "clock",
-            "custom/weather",
         ],
 
         // Modules
@@ -140,7 +139,7 @@
                 "children-class": "drawer-child",
                 //"click-to-reveal": "false"
             },
-            "modules": ["custom/battery", "backlight"],
+            "modules": ["battery", "backlight"],
         },
 
         "backlight": {
@@ -161,29 +160,23 @@
             "tooltip-format": "{alt}",
         },
 
-        "custom/battery": {
-            "interval": 8,
-            "return-type": "json",
-            "exec": "~/.config/hypr/themes/Mocha-Power/bat-pp.sh refresh",
-            "exec-on-event": true,
-            "format": "{text}%",
-            "on-click": "~/.config/hypr/themes/Mocha-Power/bat-pp.sh toggle & aplay ~/.config/sounds/interact.wav",
-            "tooltip": "true",
-            "tooltip-format": "{alt}",
+        "battery": {
+          "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+          },
+          "format": "{capacity}% {icon}",
+          "format-full": "{capacity}% {icon}",
+          "format-charging": "{capacity}% ",
+          "format-plugged": "{capacity}% ",
+          "format-alt": "{time} {icon}",
+          "format-icons": ["", "", "", "", ""]
         },
-
-        // "custom/battery": {
-        //   "return-type": "json",
-        //   "exec": "~/.config/hypr/themes/Mocha-Power/bat-pp2.sh refresh",
-        //   "exec-on-event": true,
-        //   "format": "{text}%",
-        //   "on-click": "~/.config/hypr/themes/Mocha-Power/bat-pp2.sh toggle & aplay ~/.config/sounds/interact.wav",
-        //   "tooltip": "true",
-        //   "tooltip-format": "{alt}"
-        // },
 
         "clock": {
             "interval": 1,
+            "locale": "C",
             "format": " {:%H:%M:%S    %a %d.%m}",
             "tooltip-format": "{calendar}",
             "calendar": {
@@ -197,7 +190,6 @@
                     "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>",
                 },
             },
-            "on-click": "chromium --app=https://calendar.google.com & aplay ~/.config/sounds/interact.wav",
         },
 
         "cpu": {
