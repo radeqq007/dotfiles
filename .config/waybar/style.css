@@ -1,23 +1,5 @@
-/* Define colors */
-/* {{{ */
-@define-color background1 rgba(15, 15, 38, 1);
-@define-color background2 rgba(10, 10, 32, 1);
-@define-color sepepator #313244;
-@define-color warning #f38ba8;
-@define-color caution #45475a;
-@define-color performance #f5c2e7;
-@define-color audio #cba6f7;
-@define-color misc #94e2d5;
-@define-color date #a6e3a1;
-@define-color work #b4befe;
-@define-color window #b4befe;
-@define-color resize #eba0ac;
-@define-color process #89b4fa;
-@define-color text #000000;
-/* }}} */
+@import "./theme.css";
 
-/* Reset all styles */
-/* {{{ */
 * {
     border: none;
     border-radius: 0;
@@ -27,13 +9,6 @@
     box-shadow: none;
     text-shadow: none;
 }
-
-/* }}} */
-
-/* Main bar keyframes */
-/* {{{ */
-
-/* Keyframes for main bar criticals */
 
 @keyframes blink-urgent-workspace {
     to {
@@ -54,7 +29,6 @@
     }
 }
 
-/* Keyframes for main bar modifiers */
 @keyframes blink-modifier-text {
     to {
         color: @sepepator;
@@ -67,10 +41,6 @@
     }
 }
 
-/* }}} */
-
-/* Main bar defaults */
-/* {{{ */
 #waybar.main {
     background: @background2;
     font-family: "JetBrainsMono Nerd Font propo";
@@ -91,10 +61,6 @@
     color: @text;
 }
 
-/* }}} */
-
-/* Main bar modules */
-/* {{{ */
 #cava,
 #waybar.main #custom-headsetbattery,
 #waybar.main #custom-nvidia,
@@ -130,10 +96,6 @@
     margin-bottom: -4px;
 }
 
-/* }}} */
-
-/* Module colors */
-/* {{{ */
 #waybar.main #custom-nvidia,
 #waybar.main #cpu,
 #waybar.main #temperature,
@@ -198,10 +160,6 @@
     padding-right: 15px;
 }
 
-/* }}} */
-
-/* Submap */
-/* {{{ */
 #waybar.main #submap.󰲏 {
     color: @resize;
     animation-iteration-count: infinite;
@@ -222,10 +180,6 @@
     box-shadow: none;
 }
 
-/* }}} */
-
-/* Main bar criticals */
-/* {{{ */
 #waybar.main #custom-nvidia.critical,
 /* #waybar.main #custom-battery.critical, */
 #waybar.main #custom-headsetbattery.critical,
@@ -258,10 +212,6 @@
     animation-timing-function: steps(15);
 }
 
-/* }}} */
-
-/* Main bar warnings */
-/* {{{ */
 #waybar.main #custom-headsetbattery.off,
 #waybar.main #pulseaudio.output.muted,
 #waybar.main #pulseaudio.input.source-muted {
@@ -273,10 +223,6 @@
     color: @warning;
 }
 
-/* }}} */
-
-/* Battery chargin */
-/* {{{ */
 #waybar.main #custom-battery.charging {
     color: @misc;
     animation-iteration-count: infinite;
@@ -285,12 +231,6 @@
     animation-duration: 1s;
     animation-timing-function: steps(15);
 }
-
-/* }}} */
-
-/* Workspaces */
-/* {{{ */
-/* Default workspace settings */
 
 #waybar.main #workspaces {
     /* background: @warning; */
@@ -333,7 +273,6 @@
     );
 }
 
-/* Focused workspace */
 #waybar.main #workspaces button.visible {
     color: @text;
     background-image: linear-gradient(
@@ -345,7 +284,6 @@
     );
 }
 
-/* Focused workspace & monitor */
 #waybar.main #workspaces button.active {
     color: @window;
     background-image: linear-gradient(
@@ -361,7 +299,6 @@
     );
 }
 
-/* Style when cursor is on the button */
 #waybar.main #workspaces button:hover {
     color: @window;
 }
@@ -381,7 +318,6 @@
 /*   ); */
 /* } */
 
-/* Special workplace animation */
 #waybar.main #workspaces button.special.active {
     transition: all 0s ease;
     border: 1.5px solid transparent;
@@ -393,10 +329,6 @@
     animation-timing-function: steps(15);
 }
 
-/* }}} */
-
-/* Custom icons as spacers */
-/* {{{ */
 #waybar.main #custom-spacer1,
 #waybar.main #custom-spacer2,
 #waybar.main #custom-spacer3,
@@ -472,10 +404,6 @@
     );
 }
 
-/* }}} */
-
-/* Custom tray icon */
-/* {{{ */
 #waybar.main #custom-trayicon {
     font-family: "JetBrainsMono Nerd Font";
     color: white;
@@ -485,10 +413,6 @@
     background: transparent;
 }
 
-/* }}} */
-
-/* Tooltip */
-/* {{{ */
 tooltip {
     background: @background2;
     border: 2px solid @caution;
@@ -503,10 +427,6 @@ tooltip {
     border-radius: 8pt;
 }
 
-/* }}} */
-
-/* Indicator bar keyframes */
-/* {{{ */
 @keyframes blink-critical-battery {
     to {
         border-color: @warning;
@@ -552,12 +472,6 @@ tooltip {
     }
 }
 
-/* }}} */
-
-/* indicator bar battery module */
-/* {{{ */
-
-/* Set defaults for indicator bar */
 #waybar.indicator {
     font-size: 10px;
     /* This makes indicator thicker */
@@ -565,7 +479,6 @@ tooltip {
     background: rgba(0, 0, 0, 0);
 }
 
-/* Set "battery bar" style */
 #waybar.indicator #custom-batteryindicator {
     border: 2.5px solid @sepepator;
     background: transparent;
@@ -580,7 +493,6 @@ tooltip {
     /* For example: (2880px / 1.25) - 24 - 24 - 2 * 2.5 - (27 / 2) = 2237.5px */
 }
 
-/* Blink red when battery is very low */
 #waybar.indicator #custom-batteryindicator.critical {
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -589,7 +501,6 @@ tooltip {
     animation-timing-function: steps(15);
 }
 
-/* Blink red twice when battry is low battery */
 #waybar.indicator #custom-batteryindicator.warning {
     animation-iteration-count: 4;
     animation-direction: alternate;
@@ -598,7 +509,6 @@ tooltip {
     animation-timing-function: steps(15);
 }
 
-/* Blink once red when disconnected from AC */
 #waybar.indicator #custom-batteryindicator.discharging {
     animation-iteration-count: 2;
     animation-direction: alternate;
@@ -607,7 +517,6 @@ tooltip {
     animation-timing-function: steps(15);
 }
 
-/* Blink once cyan when plugged to AC */
 #waybar.indicator #custom-batteryindicator.charging {
     animation-iteration-count: 2;
     animation-direction: alternate;
@@ -616,7 +525,6 @@ tooltip {
     animation-timing-function: steps(15);
 }
 
-/* Blink cyan twice when battery is full */
 #waybar.indicator #custom-batteryindicator.full {
     animation-iteration-count: 4;
     animation-direction: alternate;
@@ -624,6 +532,4 @@ tooltip {
     animation-duration: 0.2s;
     animation-timing-function: steps(15);
 }
-
-/* }}} */
 
