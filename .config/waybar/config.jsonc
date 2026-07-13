@@ -110,6 +110,7 @@
 
   "pulseaudio": {
     "format": "{icon}  {volume}%",
+    "format-muted": "  Muted",
     "format-bluetooth": "{icon} {volume}%",
     "format-source-muted": "{volume}",
     "format-icons": {
@@ -130,9 +131,9 @@
   },
 
   "pulseaudio#mic": {
-    "format": " {format_source}%",
-    "format-source": "{volume}",
-    "format-source-muted": "{volume}",
+    "format": "{format_source}",
+    "format-source": "  {volume}%",
+    "format-source-muted": "  Muted",
     "on-scroll-up": "sh -c 'vol=$(pactl get-source-volume @DEFAULT_SOURCE@ | grep -oP \"\\d+(?=%)\" | head -1); if [ \"$vol\" -lt 100 ]; then pactl set-source-volume @DEFAULT_SOURCE@ +2%; else pactl set-source-volume @DEFAULT_SOURCE@ 110%; fi'",
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -2%",
     "max-volume": "100",
