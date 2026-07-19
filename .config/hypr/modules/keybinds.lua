@@ -37,6 +37,25 @@ for i = 1, 10 do
   hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
+-- Numpad numbers
+local numpadKeys = {
+  "KP_End",
+  "KP_Down",
+  "KP_Next",
+  "KP_Left",
+  "KP_Begin",
+  "KP_Right",
+  "KP_Home",
+  "KP_Up",
+  "KP_Prior",
+  "KP_Insert",
+}
+
+for i, key in ipairs(numpadKeys) do
+  hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+  hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+end
+
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
@@ -54,10 +73,12 @@ hl.bind("CTRL + " .. mainMod .. " + equal", function()
   local zf = hl.get_config("cursor.zoom_factor")
   hl.config({ cursor = { zoom_factor = zf + 0.5 } })
 end)
+
 hl.bind("CTRL + " .. mainMod .. " + minus", function()
   local zf = hl.get_config("cursor.zoom_factor")
   hl.config({ cursor = { zoom_factor = math.max(zf - 0.5, 1) } })
 end)
+
 hl.bind("CTRL + " .. mainMod .. " + 0", function()
   hl.config({ cursor = { zoom_factor = 1.0 } })
 end)
