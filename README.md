@@ -8,8 +8,8 @@
 
 Main config is located in `.config/hypr/hyprland.lua` which imports the respective files:
 
-- `.config/hypr/modules/autostart.lua` - contains applications that start on bootup (waybar, hyprpaper, poweralertd etc.)
-- `.config/hypr/modules/appearance.lua` - contains the configs related to the look and feel of hyprland
+- `.config/hypr/modules/autostart.lua` - contains applications that start on startup (waybar, hyprpaper, poweralertd etc.)
+- `.config/hypr/modules/appearance.lua` - contains animations, appearance and visual settings
 - `.config/hypr/modules/input.lua` - contains the keyboard layout and touchpad scroll behavior / gestures config
 - `.config/hypr/modules/keybinds.lua` - contains the keybindings listed below
   - `SUPER` as the main mod key
@@ -63,12 +63,12 @@ Also, uses the same wallpaper (`.config/pictures/wallpaper.png`) as hyprpaper.
 
 ### wlogout
 
-Uses the [Cattpuccin Theme](https://github.com/catppuccin/wlogout)
+Uses the [Catppuccin Theme](https://github.com/catppuccin/wlogout)
 
 ### wofi
 
 ![wofi screenshot](./screenshots/wofi.png)
 
-### NeoVim
+### Neovim
 
 Linked as a submodule. The full NeoVim config and its details are located in [this repo](https://github.com/radeqq007/nvim-config).
