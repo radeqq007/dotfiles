@@ -86,6 +86,7 @@ path=(
   $GOPATH/bin
   /usr/local/go/bin
   $HOME/.cargo/bin
+  $HOME/.local/share/pnpm/bin
   $PNPM_HOME
   $BUN_INSTALL/bin
   $HOME/.spicetify
