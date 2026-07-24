@@ -46,14 +46,11 @@ window#waybar {
   font-size: 16px;
 }
 
-#battery {
+#battery,
+#network,
+#pulseaudio,
+#custom-notification {
   margin-right: 20px;
 }
 
-#network {
-  margin-right: 20px;
-}
 
-#pulseaudio {
-  margin-right: 20px;
-}
