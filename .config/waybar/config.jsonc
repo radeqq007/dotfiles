@@ -93,6 +93,12 @@
     "format": "{icon}",
     "show-special": true,
     "special-visible-only": false,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+    },
     "format-icons": {
       "default": "",
       "focused": "",
