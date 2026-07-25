@@ -1,6 +1,37 @@
 # Arch + Hyprland config
 
+My hyprland configuration with dynamic hyprland / waybar themeing.
+
+All screenshots below include the default theme.
+
 ![screenshot](./screenshots/screenshot.png)
+
+## Installation
+
+Clone the repo:
+
+```sh
+git clone https://github.com/radeqq007/dotfiles.git
+```
+
+Or with the submodules if you want the Neovim config included:
+
+```sh
+git clone --recurse-submodules https://github.com/radeqq007/dotfiles.git
+```
+
+Then cd into the directory and apply the dotfiles using [stow](https://github.com/aspiers/stow):
+
+```sh
+cd dotfiles
+stow .
+```
+
+And generate the theme using [matugen](https://github.com/InioX/matugen):
+
+```
+matugen image ~/.config/pictures/wallpaper.png
+```
 
 ## Config includes
 
@@ -72,3 +103,10 @@ Uses the [Catppuccin Theme](https://github.com/catppuccin/wlogout)
 ### Neovim
 
 Linked as a submodule. The full NeoVim config and its details are located in [this repo](https://github.com/radeqq007/nvim-config).
+
+### Scripts
+
+`.config/scripts` is included in the PATH.
+
+The `change-wallpaper.sh` is used for a **temporary** wallpaper change, with an automatic theme reload.
+The `reload-waybar.sh` script does what it says.
