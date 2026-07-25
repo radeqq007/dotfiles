@@ -1,5 +1,4 @@
-@define-color background #fbf1c7;
-@define-color foreground #32302f;
+@import "colors.css";
 
 * {
   font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
@@ -44,7 +43,10 @@ window#waybar {
   margin: 0;
   transition: all 0.3s ease-in-out;
   font-size: 16px;
+  color: @foreground;
+  background-color: @background;
 }
+
 
 #battery,
 #network,

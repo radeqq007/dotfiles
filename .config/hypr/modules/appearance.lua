@@ -1,3 +1,7 @@
+-- Force Lua to read the file from disk so it updates on hot-reload
+local home = os.getenv("HOME")
+local colors = dofile(home .. "/.config/hypr/colors.lua")
+
 hl.env("XCURSOR_SIZE", "8")
 hl.env("HYPRCURSOR_SIZE", "8")
 
@@ -9,8 +13,8 @@ hl.config({
     border_size = 1,
 
     col = {
-      active_border   = { colors = { "rgb(fbf1c7)", "rgb(f9f2d6)" }, angle = 45 },
-      inactive_border = "rgba(595959aa)",
+      active_border   = { colors = { colors.primary, colors.secondary }, angle = 45 },
+      inactive_border = colors.surface_variant,
     },
 
     resize_on_border = false,
