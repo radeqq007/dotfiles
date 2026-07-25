@@ -108,5 +108,5 @@ Linked as a submodule. The full NeoVim config and its details are located in [th
 
 `.config/scripts` is included in the PATH.
 
-The `change-wallpaper.sh` is used for a **temporary** wallpaper change, with an automatic theme reload.
-The `reload-waybar.sh` script does what it says.
+The `change-wallpaper` is used for a **temporary** wallpaper change, with an automatic theme reload.
+The `reload-waybar` script does what it says.
