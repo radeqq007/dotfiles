@@ -2,10 +2,10 @@
 set_wallpaper = false
 
 [templates.hyprland]
-input_path = "~/.config/hypr/templates/colors.lua.template"
+input_path = "~/.config/templates/hyprland.lua"
 output_path = "~/.config/hypr/colors.lua"
 post_hook = "hyprctl reload"
 
 [templates.waybar]
-input_path = "~/.config/waybar/templates/colors.css.template"
+input_path = "~/.config/templates/waybar.css"
 output_path = "~/.config/waybar/colors.css"
