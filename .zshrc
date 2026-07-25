@@ -91,6 +91,7 @@ path=(
   $BUN_INSTALL/bin
   $HOME/.spicetify
   $HOME/.opencode/bin
+  $HOME/.config/scripts
   $path
 )
 
