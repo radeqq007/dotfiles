@@ -15,7 +15,7 @@ hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("uwsm stop"))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
-hl.bind(mainMod .. " + space",  hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + space",  hl.dsp.exec_cmd(string.format("cd ~/.config/wofi && %s", menu))) -- NOTE: cd to the wofi config directory is there so that the colors.css file is being imported properly
 hl.bind(mainMod .. " + period", hl.dsp.exec_cmd("wofimoji"))
 
 hl.bind(mainMod .. " + P",     hl.dsp.window.pseudo())

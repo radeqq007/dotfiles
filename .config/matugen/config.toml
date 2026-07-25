@@ -9,3 +9,7 @@ post_hook = "hyprctl reload"
 [templates.waybar]
 input_path = "~/.config/templates/waybar.css"
 output_path = "~/.config/waybar/colors.css"
+
+[templates.wofi]
+input_path = "~/.config/templates/wofi.css"
+output_path = "~/.config/wofi/colors.css"
