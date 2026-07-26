@@ -2,7 +2,7 @@
 
 My hyprland configuration with dynamic hyprland / waybar themeing.
 
-All screenshots below include the default theme.
+All screenshots below include an example theme.
 
 ![screenshot](./screenshots/screenshot.png)
 
@@ -30,7 +30,7 @@ stow .
 And generate the theme using [matugen](https://github.com/InioX/matugen):
 
 ```
-matugen image ~/.config/pictures/wallpaper.png
+matugen image ~/.config/pictures/wallpaper.jpg
 ```
 
 ## Config includes
