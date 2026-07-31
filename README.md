@@ -1,10 +1,7 @@
-# Arch + Hyprland config
+# Cachy OS + Hyprland config
 
-My hyprland configuration with dynamic hyprland / waybar themeing.
+My hyprland configuration with noctalia.
 
-All screenshots below include an example theme.
-
-![screenshot](./screenshots/screenshot.png)
 
 ## Installation
 
@@ -27,11 +24,7 @@ cd dotfiles
 stow .
 ```
 
-And generate the theme using [matugen](https://github.com/InioX/matugen):
-
-```
-matugen image ~/.config/pictures/wallpaper.jpg
-```
+``
 
 ## Config includes
 
@@ -48,10 +41,10 @@ Main config is located in `.config/hypr/hyprland.lua` which imports the respecti
   - `mainMod + Q` - terminal (ghostty)
   - `mainMod + B` - browser (Zen)
   - `mainMod + F` - file manager (thunar)
-  - `mainMod + Space` - menu (wofi)
+  - `mainMod + Space` - noctalia launcher
   - `mainMod + V` - toggle windows floating
   - `mainMod + M` - stop the current uwsm session
-  - `mainMod + .` - wofi emoji
+  - `mainMod + .` - noctalia emoji selector
   - `mainMod + P` - enable pseudotiling
   - `mainMod + /` - toggle split
   - `mainMod + left / h` - move focus to left
@@ -63,50 +56,15 @@ Main config is located in `.config/hypr/hyprland.lua` which imports the respecti
 - `.config/hypr/modules/monitors.lua` - monitors config
 - `.config/hypr/modules/windows.lua` - windows behavior
 
-### Hyprpaper
+### fish
 
-Uses the `.config/pictures/wallpaper.png` file.
-
-### Hypridle
-
-`.config/hypr/hypridle.conf`
-
-### Hyprlock
-
-Uses `.config/pictures/pfp.jpg` for the profile picture.
-Also, uses the same wallpaper (`.config/pictures/wallpaper.png`) as hyprpaper.
-
-### zsh
-
-- zinit
-- starship
-- autocompletion
-- fuzzy find tab completion
 - zoxide
 
 ### Fastfetch
 
 ![fastfetch screenshot](./screenshots/fastfetch.png)
 
-### Waybar
-
-![waybar screenshot](./screenshots/waybar.png)
-
-### wlogout
-
-Uses the [Catppuccin Theme](https://github.com/catppuccin/wlogout)
-
-### wofi
-
-![wofi screenshot](./screenshots/wofi.png)
-
 ### Neovim
 
 Linked as a submodule. The full NeoVim config and its details are located in [this repo](https://github.com/radeqq007/nvim-config).
 
-### Scripts
-
-`.config/scripts` is included in the PATH.
-
-The `change-wallpaper` is used for a **temporary** wallpaper change, with an automatic theme reload.
-The `reload-waybar` script does what it says.
