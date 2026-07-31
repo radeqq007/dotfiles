@@ -5,3 +5,6 @@ require("modules.keybinds")
 require("modules.monitors")
 require("modules.windows")
 
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()

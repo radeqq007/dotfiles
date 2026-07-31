@@ -1,40 +1,46 @@
 local terminal    = "ghostty"
-local browser     = "zen-browser"
+local browser     = "flatpak run app.zen_browser.zen"
 local fileManager = "thunar"
-local menu        = "wofi"
+
+local b = hl.bind
+local exec = hl.dsp.exec_cmd
+local focus = hl.dsp.focus
 
 local mainMod = "SUPER"
 
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + C", hl.dsp.window.close())
+b(mainMod .. " + L", exec("noctalia msg session lock"))
+b(mainMod .. " + Q", exec(terminal))
+b(mainMod .. " + B", exec(browser))
+b(mainMod .. " + C", hl.dsp.window.close())
 
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("uwsm stop"))
+b(mainMod .. " + M", exec("uwsm stop"))
 
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+b(mainMod .. " + F", exec(fileManager))
+b(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 
-hl.bind(mainMod .. " + space",  hl.dsp.exec_cmd(string.format("cd ~/.config/wofi && %s", menu))) -- NOTE: cd to the wofi config directory is there so that the colors.css file is being imported properly
-hl.bind(mainMod .. " + period", hl.dsp.exec_cmd("wofimoji"))
+b(mainMod .. " + space",  exec("noctalia msg panel-toggle launcher"))
+b(mainMod .. " + PERIOD",  exec("noctalia msg panel-toggle launcher /emo"))
 
-hl.bind(mainMod .. " + P",     hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + slash", hl.dsp.layout("togglesplit"))
+b(mainMod .. " + P",     hl.dsp.window.pseudo())
+b(mainMod .. " + slash", hl.dsp.layout("togglesplit"))
 
-hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
+b(mainMod .. " + left",  focus({ direction = "left" }))
+b(mainMod .. " + right", focus({ direction = "right" }))
+b(mainMod .. " + up",    focus({ direction = "up" }))
+b(mainMod .. " + down",  focus({ direction = "down" }))
 
-hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
+b(mainMod .. " + h", focus({ direction = "left" }))
+b(mainMod .. " + l", focus({ direction = "right" }))
+b(mainMod .. " + k", focus({ direction = "up" }))
+b(mainMod .. " + j", focus({ direction = "down" }))
+
+b(mainMod .. " + X", exec("noctalia msg panel-toggle control-center"))
+b(mainMod .. " + Z", exec("noctalia msg settings-open"))
 
 for i = 1, 10 do
   local key = i % 10
-  hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-  hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+  b(mainMod .. " + " .. key, focus({ workspace = i }))
+  b(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
 -- Numpad numbers
@@ -52,47 +58,44 @@ local numpadKeys = {
 }
 
 for i, key in ipairs(numpadKeys) do
-  hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-  hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+  b(mainMod .. " + " .. key, focus({ workspace = i }))
+  b(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+b(mainMod .. " + mouse_down", focus({ workspace = "e+1" }))
+b(mainMod .. " + mouse_up",   focus({ workspace = "e-1" }))
 
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+b(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
+b(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-hl.bind("Print", hl.dsp.exec_cmd("hyprshot --freeze -m output -o ~/Pictures/Screenshots/"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot --freeze -m region -o ~/Pictures/Screenshots/"))
-hl.bind("CTRL + Print", hl.dsp.exec_cmd("hyprshot --freeze -m window -o ~/Pictures/Screenshots/"))
+b(mainMod .. " + SHIFT + S", exec("noctalia msg screenshot-region"))
 
-hl.bind(mainMod .. " + SHIFT + p", hl.dsp.exec_cmd("hyprpicker"))
+b(mainMod .. " + SHIFT + p", exec("hyprpicker"))
 
 -- Zoom
-hl.bind("CTRL + " .. mainMod .. " + equal", function()
+b("CTRL + " .. mainMod .. " + equal", function()
   local zf = hl.get_config("cursor.zoom_factor")
   hl.config({ cursor = { zoom_factor = zf + 0.5 } })
 end)
 
-hl.bind("CTRL + " .. mainMod .. " + minus", function()
+b("CTRL + " .. mainMod .. " + minus", function()
   local zf = hl.get_config("cursor.zoom_factor")
   hl.config({ cursor = { zoom_factor = math.max(zf - 0.5, 1) } })
 end)
 
-hl.bind("CTRL + " .. mainMod .. " + 0", function()
+b("CTRL + " .. mainMod .. " + 0", function()
   hl.config({ cursor = { zoom_factor = 1.0 } })
 end)
 
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
-hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),      { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),    { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                   { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                   { locked = true, repeating = true })
+b("XF86AudioRaiseVolume", exec("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
+b("XF86AudioLowerVolume", exec("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
+b("XF86AudioMute",        exec("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),      { locked = true, repeating = true })
+b("XF86AudioMicMute",     exec("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),    { locked = true, repeating = true })
+b("XF86MonBrightnessUp",  exec("brightnessctl -e4 -n2 set 5%+"),                   { locked = true, repeating = true })
+b("XF86MonBrightnessDown",exec("brightnessctl -e4 -n2 set 5%-"),                   { locked = true, repeating = true })
 
-hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),        { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"),  { locked = true })
-hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"),  { locked = true })
-hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),    { locked = true })
-
+b("XF86AudioNext",  exec("playerctl next"),        { locked = true })
+b("XF86AudioPause", exec("playerctl play-pause"),  { locked = true })
+b("XF86AudioPlay",  exec("playerctl play-pause"),  { locked = true })
+b("XF86AudioPrev",  exec("playerctl previous"),    { locked = true })
 
