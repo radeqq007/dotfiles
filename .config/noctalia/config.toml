@@ -1,29 +1,25 @@
 [bar.default]
 background_opacity = 0.2799999937415123
-center = [ "workspaces" ]
+center = [ "audio_visualizer", "workspaces", "audio_visualizer" ]
 concave_edge_corners = false
 end = [ "media", "spacer_1", "tray", "notifications", "network", "volume", "battery" ]
 margin_ends = 2
 scale = 0.90000000596046448
-start = [ "session", "launcher", "clock", "spacer_1", "active_window" ]
+start = [ "session", "notes", "widget", "clock", "spacer_1", "active_window" ]
 thickness = 28
 widget_spacing = 10
 
 [control_center]
 width = 750
 
+    [control_center.calendar]
+    show_events_card = false
+
 [dock]
-background_opacity = 0.1099999975413084
-enabled = true
-icon_size = 34
-item_spacing = 8
-radius = 36
-reserve_space = false
-shadow = false
-smart_auto_hide = true
+enabled = false
 
 [location]
-address = "Malaga, Spain"
+address = "Łomża, Poland"
 
 [lockscreen_widgets]
 enabled = true
@@ -46,6 +42,8 @@ widget_order = [
     cx = 960.0
     cy = 570.0
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -71,6 +69,8 @@ widget_order = [
     cx = 960.0
     cy = 796.0
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "fancy_audio_visualizer"
 
@@ -83,6 +83,8 @@ widget_order = [
     cx = 960.0
     cy = 962.0
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "media_player"
 
@@ -92,42 +94,92 @@ widget_order = [
     cx = 960.0
     cy = 156.0
     output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "clock"
 
 [plugins]
-enabled = [ "noctalia/bitwarden", "apex077/eyecare", "noctalia/notes" ]
+enabled = [ "noctalia/bitwarden", "noctalia/notes", "alexander/screen-toolkit", "damian-ds7/battery-threshold" ]
 
 [shell]
-avatar_path = "/home/radek/Pictures/Wallpapers/wallhaven-rd6pom.png"
+avatar_path = "/home/radek/Pictures/Wallpapers/3jqeth7e1ti41.jpg"
 font_family = "Adwaita Sans"
 
     [shell.panel]
     transparency_mode = "glass"
 
 [theme]
-builtin = "Noctalia"
+builtin = "Ayu"
 community_palette = "ADW"
+mode = "dark"
 source = "wallpaper"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "kitty", "qt" ]
 
-[wallpaper.default]
-path = "/home/radek/Pictures/Wallpapers/wallhaven-rd6pom.png"
+[wallpaper]
+directory = "/home/radek/Pictures/Wallpapers"
 
-[wallpaper.last]
-path = "/home/radek/Pictures/Wallpapers/wallhaven-rd6pom.png"
+    [wallpaper.default]
+    path = "/home/radek/Pictures/Wallpapers/wallhaven-rd6pom.png"
 
-[wallpaper.monitors.eDP-1]
-path = "/home/radek/Pictures/Wallpapers/wallhaven-rd6pom.png"
+    [wallpaper.last]
+    path = "/home/radek/Pictures/Wallpapers/wallhaven-rd6pom.png"
 
-[[wallpaper.favorite]]
-palette_source = "wallpaper"
-path = "/home/radek/Pictures/Wallpapers/wallhaven-rd6pom.png"
-theme_mode = "dark"
-wallpaper_scheme = "m3-content"
+    [wallpaper.monitors.eDP-1]
+    path = "/home/radek/Pictures/Wallpapers/wallhaven-rd6pom.png"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/radek/Pictures/Wallpapers/wallhaven-rd6pom.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "m3-content"
+
+    [[wallpaper.favorite]]
+    path = "/home/radek/Pictures/Wallpapers/wallhaven-4x762l.jpg"
+    theme_mode = "auto"
+
+    [[wallpaper.favorite]]
+    builtin_palette = "Ayu"
+    palette_source = "builtin"
+    path = "/home/radek/Pictures/Wallpapers/asuka-weasley.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/radek/Pictures/Wallpapers/rei-ayanami.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "m3-content"
+
+    [[wallpaper.favorite]]
+    path = "/home/radek/Pictures/Wallpapers/cat_anime-girl.png"
+    theme_mode = "auto"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/radek/Pictures/Wallpapers/wallhaven-2ymr79.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "m3-content"
+
+    [[wallpaper.favorite]]
+    path = "/home/radek/Pictures/Wallpapers/wallhaven-8g5yr2.jpg"
+    theme_mode = "auto"
+
+[widget.audio_visualizer]
+bands = 10
+color_1 = "secondary"
+color_2 = "secondary"
+interactive = false
+scale = 1.2
+width = 120
+
+[widget.notes]
+type = "noctalia/notes:notes"
+
+[widget.widget]
+type = "alexander/screen-toolkit:widget"
 
 [widget.workspaces]
-display = "none"
+show_labels = false
