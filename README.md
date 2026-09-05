@@ -2,6 +2,10 @@
 
 My hyprland configuration with noctalia.
 
+## Overview
+
+![screenshot](./screenshots/screenshot.png)
+![screenshot](./screenshots/screenshot2.png)
 
 ## Installation
 
