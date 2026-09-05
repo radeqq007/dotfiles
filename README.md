@@ -2,6 +2,10 @@
 
 My hyprland configuration with noctalia.
 
+> [!NOTE]
+> You'll have to install the wallpaper yourself and put it in the `~/Pictures/Wallpapers/` directory.
+> You can download the wallpaper [here](https://wallhaven.cc/w/rd6pom).
+
 ## Overview
 
 ![screenshot](./screenshots/screenshot.png)
