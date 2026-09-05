@@ -1,4 +1,3 @@
-theme = noctalia
 
 background-opacity = 0.6
 
@@ -25,3 +24,4 @@ keybind = alt+ctrl+-=close_tab
 
 keybind = alt+==next_tab
 keybind = alt+-=previous_tab
+theme = noctalia
